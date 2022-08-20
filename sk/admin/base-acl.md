@@ -1,28 +1,28 @@
 # ACL
 
-Permission management is realized by `acl` commands.
+správa práv je realizovaná pomocou `acl` príkazov.
 
-All commands described on this page are provided by the `base.acl` module.
+Všetky príkazy opísané na tejto strane sú postkytné `base.acl` modulom.
 
-## How it works
+## Ako to funguje
 
-All commands have preconfigured `ACLevel`, which may be one of following: `BOT_OWNER`, `GUILD_OWNER`, `MOD`, `SUBMOD`, `MEMBER` or `EVERYONE`.
-This value determines if the user is allowed to run the command or not.
-`BOT_OWNER` can always perform any command.
+Všetky príkazy majú predvolený `ACLevel`, ktorého hodnota môže byť: `BOT_OWNER`, `GUILD_OWNER`, `MOD`, `SUBMOD`, `MEMBER` alebo `EVERYONE`.
+Táto hodnota určuje, či používateľ môže používať konkrétny príkaz alebo nie.
+`BOT_OWNER` môže vždy zavolať akýkoľvek príkaz.
 
-## Setting up role mapping
+## Nastavenie priradenia rolí
 
-Any role on your server can be mapped to one of the ACLevels listed above.
-`BOT_OWNER` and `GUILD_OWNER` are mapped automatically to the respective owners and cannot be assigned to anyone else.
+Ktorejkoľvek roli na tvojom serveri môže byť priradená ACLevel hodnota.
+`BOT_OWNER` a `GUILD_OWNER` sú priradené automaticky majiteľom a nemôžu byť pridelené nikomu inému.
 
-Assuming you have two levels of moderators (**Administrator**, **Helper**), you can map them to bot's two ACLevels
+Predpokladajme, že máš na serveri dve role (**Administrator**, **Helper**), môžeš ich priradiť botovým dvom ACLevelom
 
 ```
 !acl mapping add Administrator MOD
 !acl mapping add Helper SUBMOD
 ```
 
-This will automatically grant them permissions to use privileged commands.
+Týmto im budú altomaticky pridelené práva na používanie privilegovaných príkazov.
 
 ## Altering the defaults
 
